@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Panel de control para gestión de e-commerce." />
+    <meta name="author" content="Sebastian Enriquez" />
+    <meta property="og:title" content="EcomDash - Panel de Control" />
+    <meta property="og:description" content="Dashboard de gestión para e-commerce con métricas en tiempo real." />
+    <meta property="og:type" content="website" /> 
+    <meta name="theme-color" content="#1D1D1F" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <script type="module" src="./assets/js/main.js"></script>
+    <title>EcomDash -- Panel de Control</title>
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">
+      Saltar al contenido principal
+    </a>
+
+    <div id="app">
+
+      <aside class="sidebar" aria-label="Navegación principal" id="sidebar">
+        <header class="sidebar__header">
+          <a href="/" class="sidebar__brand" aria-label="EcomoDash - Ir al inicio">
+            <span class="sidebar__brand-icon" aria-hidden="true"></span>
+            <span class="sidebar__brand-name">EcomDash</span>
+          </a>
+        </header>
+
+        <nav class="sidebar__nav" aria-label="Menú de secciones">
+          <ul class="nav-list" role="list">
+             
+             <li class="nav-list__item">
+              <a href="#kpis" class="nav-list__link" aria-current="page">
+                <svg aria-hidden="true" focusable="false" class="nav-list__icon">
+
+                </svg>
+                <span>Métricas</span>
+              </a>
+             </li>
+
+             <li class="nav-list__item">
+              <a href="#ventas" class="nav-list__link" >
+                <svg aria-hidden="true" focusable="false" class="nav-list__icon">
+
+                </svg>
+                <span>Ventas</span>
+              </a>
+             </li>
+
+             <li class="nav-list__item">
+              <a href="#inventario" class="nav-list__link" >
+                <svg aria-hidden="true" focusable="false" class="nav-list__icon">
+
+                </svg>
+                <span>Inventario</span>
+              </a>
+             </li>
+
+             <li class="nav-list__item">
+              <a href="#perfil" class="nav-list__link" >
+                <svg aria-hidden="true" focusable="false" class="nav-list__icon">
+
+                </svg>
+                <span>Perfil</span>
+              </a>
+             </li>
+          </ul>
+        </nav>
+
+        <footer class="sidebar__footer">
+          <div class="user-profile">
+            <div class="user-profile__avatar" aria-hidden="true"></div>
+            <div class="user-profile__info">
+              <span class="user-profile__name">Sebastian Enriquez</span>
+              <span xlass="user-profile__email">sebasweb.devx@gmail.com</span>
+            </div>
+          </div>
+        </footer>
+      </aside>
+
+      <div class="app__workspace">
+        <header class="topbar" role="banner">
+          <div class="topbar__left">
+            <button type="button" class="topbar__left-button" aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menú de navegación"></button>
+            <h1 class="topbar__page-title" aria-live="polite">Métricas</h1>
+          </div>
+
+          <div class="topbar__right">
+            <button type="button" class="topbar__notifications" aria-label="Notificaciones (3 sin leer)"><span aria-hidden="true" class="topbar__badge">
+
+            3</span></button>
+
+            <button type="button" aria-expanded="false" aria-label="Sebastian Enriquez" aria-haspopup="menu" class="topbar__profile">
+              <img alt="" src="./assets/icons/avatar.png" class="topbar__picture" width="32" height="32">
+              <span aria-hidden="true" class="topbar__username">Sebastian E.</span>
+            </button>
+          </div>
+        </header>
+
+        <main id="main-content" class="dashboard" tabindex="-1"></main>
+      </div>
+
+    </div>
+  </body>
+</html>
