@@ -102,7 +102,106 @@
           </div>
         </header>
 
-        <main id="main-content" class="dashboard" tabindex="-1"></main>
+        <main id="main-content" class="dashboard" tabindex="-1">
+          <section id="kpis" class="dashboard__section" aria-labelledby="kpis-heading">
+            <h2 id="kpis-heading" class="section-heading">Métricas principales</h2>
+            <ul class="kpi-grid" role="list">
+              <li>
+                <article class="kpi-card" aria-label="Ventas totales">
+                  <h3 class="kpi-card__title">Ventas totales</h3>
+
+                  <p class="kpi-card__value" aria-live="polite">
+                    <span class="kpi-card__amount">$0</span>
+                  </p>
+
+                  <span class="kpi-card__trend">+0%</span>
+                </article>
+              </li>
+
+              <li>
+                <article class="kpi-card" aria-label="Total productos">
+                  <h3 class="kpi-card__title">Total productos</h3>
+
+                  <p class="kpi-card__value" aria-live="polite">
+                    <span class="kpi-card__amount">0</span>
+                  </p>
+
+                  <span class="kpi-card__trend">0%</span>
+                </article>
+              </li>
+
+              <li>
+                <article class="kpi-card" aria-label="Categorías">
+                  <h3 class="kpi-card__title">Categorías</h3>
+
+                  <p class="kpi-card__value" aria-live="polite">
+                    <span class="kpi-card__amount">0</span>
+                  </p>
+
+                  <span class="kpi-card__trend">+0%</span>
+                </article>
+              </li>
+
+              <li>
+                <article class="kpi-card" aria-label="Precio promedio">
+                  <h3 class="kpi-card__title">Precio promedio</h3>
+
+                  <p class="kpi-card__value" aria-live="polite">
+                    <span class="kpi-card__amount">$0</span>
+                  </p>
+
+                  <span class="kpi-card__trend">+0%</span>
+                </article>
+              </li>
+            </ul>
+          </section>
+
+          <section id="ventas" class="dashboard__section" aria-labelledby="ventas-heading" hidden>
+            <h2 id="ventas-heading" class="section-heading">Análisis de ventas</h2>
+            <div class="charts-grid">
+              <article class="chart-card">
+                <header class="chart-card__header">
+                  <h3 class="chart-card__title">Ventas por categorias</h3>
+                </header>
+
+                <div class="chart-card__body">
+                  <canvas id="chart-categories" role="img" aria-label="Grafica de ventas por categorias"></canvas>
+                </div>
+              </article>
+
+              <article class="chart-card">
+                <header class="chart-card__header">
+                  <h3 class="chart-card__title">Distribución de precios</h3>
+                </header>
+
+                <div class="chart-card__body">
+                  <canvas id="chart-prices" role="img" aria-label="Grafica de distribución de precios"></canvas>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section id="inventario" class="dashboard__section" aria-labelledby="inventario-heading" hidden>
+            <h2 id="inventario-heading" class="section-heading">Gestión de inventario</h2>
+
+            <div class="table-controls">
+              <search class="table-controls__search">
+                <label for="product-search" class="sr-only">Buscar productos</label>
+                <input type="search" id="product-search" placeholder="Busca el producto deseado" autocomplete="off" aria-describedby="search-hint">
+                <span id="search-hint" class="sr-only">Escribe para filtrar productos en tiempo real</span>
+              </search>
+            </div>
+
+            <div class="table-controls__filters">
+              <select></select>
+              <label></label>
+            </div>
+          </section>
+
+          <section id="perfil" class="dashboard__section" aria-labelledby="perfil-heading" hidden>
+            <h2 id="perfil-heading" class="section-heading">Perfil y configuración</h2>
+          </section>
+        </main>
       </div>
 
     </div>
