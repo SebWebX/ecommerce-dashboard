@@ -25,7 +25,7 @@
 
       <aside class="sidebar" aria-label="Navegación principal" id="sidebar">
         <header class="sidebar__header">
-          <a href="/" class="sidebar__brand" aria-label="EcomoDash - Ir al inicio">
+          <a href="/" class="sidebar__brand" aria-label="EcomDash — Ir al inicio">
             <span class="sidebar__brand-icon" aria-hidden="true"></span>
             <span class="sidebar__brand-name">EcomDash</span>
           </a>
@@ -77,7 +77,7 @@
             <div class="user-profile__avatar" aria-hidden="true"></div>
             <div class="user-profile__info">
               <span class="user-profile__name">Sebastian Enriquez</span>
-              <span xlass="user-profile__email">sebasweb.devx@gmail.com</span>
+              <span class="user-profile__email">sebasweb.devx@gmail.com</span>
             </div>
           </div>
         </footer>
@@ -190,11 +190,43 @@
                 <input type="search" id="product-search" placeholder="Busca el producto deseado" autocomplete="off" aria-describedby="search-hint">
                 <span id="search-hint" class="sr-only">Escribe para filtrar productos en tiempo real</span>
               </search>
+
+              <div class="table-controls__filters">
+                <label for="category-filter" class="sr-only">Filtrar por categoría</label>
+                <select id="category-filter" class="table-controls__select">
+                   <option value="">Todas las categorías</option>
+                </select>
+              </div>
             </div>
 
-            <div class="table-controls__filters">
-              <select></select>
-              <label></label>
+            <div class="loading-state" aria-label="Estado de carga" role="status" aria-live="polite">
+              <div class="spinner" aria-hidden="true"></div>
+              <p>Cargando inventario...</p>
+            </div>
+
+            <div class="table-wrapper" role="region" aria-labelledby="inventory-table-caption" hidden>
+              <table class="data-table">
+                <caption id="inventory-table-caption" class="data-table__caption">Inventario de productos
+                  <span aria-live="polite" class="data-table__count"></span>
+                </caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col" class="data-table__th">Imagen</th>
+                    <th scope="col" class="data-table__th" aria-sort="none"><button type="button" class="data-table__sort-btn">Producto</button></th>
+                    <th scope="col" class="data-table__th">Categoría</th>
+                    <th scope="col" class="data-table__th" aria-sort="none"><button type="button" class="data-table__sort-btn">Precio</button></th>
+                    <th scope="col" class="data-table__th">Rating</th>
+                    <th scope="col" class="data-table__th"><span class="sr-only">Acciones</span></th>
+                  </tr>
+                </thead>
+
+                <tbody id="inventory-tbody" class="data-table__body"></tbody>
+              </table>
+            </div>
+
+            <div class="empty-state" role="status" hidden>
+              <p class="empty-state__description">No se encontraron productos con ese criterio de búsqueda.</p>
             </div>
           </section>
 
