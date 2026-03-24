@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Panel de control para gestión de e-commerce." />
     <meta name="author" content="Sebastian Enriquez" />
-    <meta property="og:title" content="EcomDash - Panel de Control" />
+    <meta property="og:title" content="EcomDash — Panel de Control"  />
     <meta property="og:description" content="Dashboard de gestión para e-commerce con métricas en tiempo real." />
     <meta property="og:type" content="website" /> 
     <meta name="theme-color" content="#1D1D1F" />
@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/main.css" />
     <script type="module" src="./assets/js/main.js"></script>
-    <title>EcomDash -- Panel de Control</title>
+    <title>EcomDash — Panel de Control</title>
   </head>
   <body>
     <a href="#main-content" class="skip-link">
@@ -91,9 +91,7 @@
           </div>
 
           <div class="topbar__right">
-            <button type="button" class="topbar__notifications" aria-label="Notificaciones (3 sin leer)"><span aria-hidden="true" class="topbar__badge">
-
-            3</span></button>
+            <button type="button" class="topbar__notifications" aria-label="Notificaciones (3 sin leer)"><span aria-hidden="true" class="topbar__badge">3</span></button>
 
             <button type="button" aria-expanded="false" aria-label="Sebastian Enriquez" aria-haspopup="menu" class="topbar__profile">
               <img alt="" src="./assets/icons/avatar.png" class="topbar__picture" width="32" height="32">
@@ -232,9 +230,51 @@
 
           <section id="perfil" class="dashboard__section" aria-labelledby="perfil-heading" hidden>
             <h2 id="perfil-heading" class="section-heading">Perfil y configuración</h2>
+
+            <form class="profile-form" aria-label="Formulario de configuración de perfil" novalidate>
+              <fieldset class="profile-form__fieldset">
+                <legend class="profile-form__legend">Información personal</legend>
+                <div class="form-group">
+                  <label class="form-group__label" for="nombre">Nombre</label>
+                  <input class="form-group__input" type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" aria-required="true" autocomplete="name" aria-describedby="nombre-error" required>
+                  <span id="nombre-error" class="form-group__error" role="alert" aria-live="assertive"></span>
+                </div>
+               
+                <div class="form-group">
+                  <label for="email" class="form-group__label">Email</label>
+                  <input class="form-group__input" type="email" id="email" name="email" placeholder="Escribe tu email" aria-required="true" autocomplete="email" aria-describedby="email-error" required>
+                  <span id="email-error" class="form-group__error" role="alert" aria-live="assertive"></span>
+                </div>
+              </fieldset>
+
+              <fieldset class="profile-form__fieldset">
+                <legend class="profile-form__legend">Preferencias</legend>
+                <div class="form-group">
+                  <label class="form-group__label" for="moneda">Moneda de visualización</label>
+                  <select name="moneda" id="moneda" class="form-group__select" autocomplete="transaction-currency">
+                    <option value="mxn">Pesos Mexicanos</option>
+                    <option value="eua">Dolares Americanos</option>
+                    <option value="eur">Euros</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-group__label"  id="tema-label">Tema oscuro</label>
+                  <button type="button" role="switch" class="theme-toggle" 
+                   aria-checked="false" aria-labelledby="tema-label">
+                   <span class="theme-toggle__thumb" aria-hidden="true"></span>
+                  </button>
+                </div>
+              </fieldset>
+
+              <div class="profile-form__actions">
+                <button type="submit" class="btn btn--primary">Guardar cambios</button>
+                <span role="status" aria-live="polite"></span>
+              </div>
+            </form>
           </section>
         </main>
-      </div>
+      </div> 
 
     </div>
   </body>
