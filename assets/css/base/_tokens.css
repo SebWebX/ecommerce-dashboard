@@ -1,0 +1,25 @@
+:root{
+    /*Superficies*/
+    --color-bg-app: #F5F5F7;
+    --color-bg-surface: #FFFFFF;
+    --color-bg-hover: #F9F9F9;
+
+    /*Tipografía*/
+    --color-text-primary: #1D1D1F;
+    --color-text-secondary: #86868B;
+    --color-text-hint: #AEAEB2;
+
+    /*Bordes*/
+    --color-border: rgba(0,0,0,0.08);
+    --color-border-strong: rgba(0,0,0,0.14);
+
+    /*Semánticos*/
+    --color-success: #34C759;
+    --color-warning: #FF9500;
+    --color-danger: #FF3B30;
+    --color-info: #007AFF;
+
+    /*Tipografía y espacidado*/
+}
+
+
