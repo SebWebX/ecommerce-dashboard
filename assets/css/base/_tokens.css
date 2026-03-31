@@ -23,6 +23,7 @@
     /*Fuente*/
     --font-base: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     /*Tamaño de textos*/
+    --text-xs: 0.75rem;
     --text-sm: 0.875rem;
     --text-base: 1rem;
     --text-lg: 1.125rem;

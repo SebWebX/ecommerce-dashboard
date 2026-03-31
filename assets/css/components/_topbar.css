@@ -1,0 +1,47 @@
+.topbar__left{
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.topbar__right{
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.topbar__page-title{
+    font-size: var(--text-lg);
+    font-weight: 500;
+    color: var(--color-text-primary);
+}
+
+.topbar__notifications, .topbar__profile{
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    transition: background-color 0.2s ease;
+}
+
+.topbar__notifications:hover, .topbar__profile:hover{
+    background-color: var(--color-bg-hover);
+}
+
+.topbar__badge{
+    background-color: var(--color-danger);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 500;
+    padding: 0.125rem 0.3125rem;
+    border-radius: var(--radius-full);
+}
+
+.topbar__picture{
+    border-radius: var(--radius-full);
+    width: 2rem;
+    height: 2rem;
+}
