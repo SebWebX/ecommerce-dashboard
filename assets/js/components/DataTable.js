@@ -42,3 +42,23 @@ export function initSearch(products){
       renderDataTable(filtered)  
   })
 }
+
+export function initCategoryFilter(products, categories){
+  const select = document.getElementById('category-filter');
+
+  categories.forEach(category => {
+    const option = document.createElement('option');
+    option.value = category
+    option.textContent = formatCategory(category)
+    select.appendChild(option)
+  })
+
+  select.addEventListener('change', () =>{
+    const selected = select.value
+    const filtered = selected === ''
+    ? products
+    : products.filter(p => p.category === selected)
+
+    renderDataTable(filtered)
+  })
+}

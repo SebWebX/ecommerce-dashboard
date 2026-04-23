@@ -2,7 +2,9 @@ import { getProducts, getCategories } from './core/api.js'
 import store from './core/store.js'
 import { navigateTo } from './core/router.js'
 import { renderKpiCards } from './components/KpiCards.js'
-import { renderDataTable, initSearch } from './components/DataTable.js'
+import { renderDataTable, initSearch, initCategoryFilter } from './components/DataTable.js'
+import { renderCharts } from './components/Charts.js'
+
 
 
 async function init(){
@@ -28,6 +30,11 @@ document.querySelectorAll('.nav-list__link').forEach(link => {
       if (sectionId === 'inventario') {
         renderDataTable(store.state.products)
         initSearch(store.state.products)
+        initCategoryFilter(store.state.products, store.state.categories)
+      }
+
+      if (sectionId === 'ventas') {
+        renderCharts(store.state.products)
       }
     });
   });
