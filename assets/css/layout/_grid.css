@@ -35,3 +35,55 @@
     top: 0;
     z-index: 100;
 }
+
+@media (max-width: 1024px){
+    .kpi-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px){
+    #app{
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar{
+        display: none;
+        width: 0;
+    }
+
+    .app__workspace{
+        width: 100%;
+        min-width: 0;
+    }
+
+
+    .dashboard{
+        overflow-x: hidden;
+    }
+
+    .topbar{
+        padding: 0 var(--space-4);
+    }
+
+    .topbar__page-title {
+        font-size: var(--text-base);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+      }
+
+    .section-heading{
+        font-size: var(--text-lg);
+    }
+
+}
+
+@media (max-width: 480px){
+  
+
+    .dashboard{
+        padding: var(--space-4);
+    }
+}
