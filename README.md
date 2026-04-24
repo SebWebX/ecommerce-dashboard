@@ -5,7 +5,7 @@ Panel de control para gestión de e-commerce construido con HTML semántico, CSS
 ## Demo
 Link: 
 
-![Screenshot del dashboard]
+
 <img width="1699" height="939" alt="$3,240 92" src="https://github.com/user-attachments/assets/ba68d06d-d067-4cae-8781-3701af4af823" />
 <img width="1681" height="942" alt="$3 240 92" src="https://github.com/user-attachments/assets/ac07e364-47e6-4275-a7db-caa46b29e4eb" />
 
