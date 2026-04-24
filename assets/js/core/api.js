@@ -8,7 +8,6 @@ export async function getProducts(){
             throw new Error('Error al obtener productos');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch(error){
         console.log(error);
@@ -22,7 +21,6 @@ export async function getCategories(){
             throw new Error('Error al obtener categorías');
         }
         const data = await response.json();
-        console.log(data);
         return data;
     } catch(error){
         console.log(error);
