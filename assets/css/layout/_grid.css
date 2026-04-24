@@ -78,6 +78,12 @@
         font-size: var(--text-lg);
     }
 
+    .charts-grid {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-8);
+      }
+
 }
 
 @media (max-width: 480px){

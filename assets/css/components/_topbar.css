@@ -45,3 +45,37 @@
     width: 2rem;
     height: 2rem;
 }
+
+.topbar__left-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-2);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .topbar__left-button:hover {
+    background-color: var(--color-bg-hover);
+  }
+
+  .topbar__avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-surface);
+    font-size: 0.625rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .topbar__profile {
+    gap: var(--space-3);
+  }
