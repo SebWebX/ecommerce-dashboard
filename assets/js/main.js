@@ -5,6 +5,14 @@ import { renderKpiCards } from './components/KpiCards.js'
 import { renderDataTable, initSearch, initCategoryFilter } from './components/DataTable.js'
 import { renderCharts } from './components/Charts.js'
 
+const savedTheme = localStorage.getItem('theme')
+if (savedTheme === 'dark') {
+  document.documentElement.setAttribute('data-theme', 'dark')
+}
+
+let themeToggleInitialized = false;
+let profileFormInitialized = false;
+
 function initSidebarToggle() {
   const toggle = document.querySelector('.topbar__left-button')
   const sidebar = document.getElementById('sidebar')
@@ -24,6 +32,47 @@ function initSidebarToggle() {
   })
 }
 
+function initThemeToggle(){
+  const toggle = document.querySelector('.theme-toggle')
+  const html = document.documentElement
+
+  
+  const currentTheme = html.getAttribute('data-theme')
+  if (currentTheme === 'dark') {
+    toggle.setAttribute('aria-checked', 'true')
+  } else {
+    toggle.setAttribute('aria-checked', 'false')
+  }
+
+  
+  toggle.addEventListener('click', () => {
+    const isDark = toggle.getAttribute('aria-checked') === 'true'
+    if (isDark) {
+      html.removeAttribute('data-theme')
+      toggle.setAttribute('aria-checked', 'false')
+      localStorage.setItem('theme', 'light')
+    } else {
+      html.setAttribute('data-theme', 'dark')
+      toggle.setAttribute('aria-checked', 'true')
+      localStorage.setItem('theme', 'dark')
+    }
+  })
+}
+function initProfileForm() {
+  const form = document.querySelector('.profile-form')
+  
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    
+    const saveStatus = document.querySelector('#save-status')
+    saveStatus.textContent = '✓ Cambios guardados'
+    
+    setTimeout(() => {
+      saveStatus.textContent = ''
+    }, 3000)
+  })
+}
+
 async function init(){
     store.setLoading(true);
 
@@ -38,6 +87,7 @@ async function init(){
     store.setLoading(false);
 
     initSidebarToggle();
+
 }
 
 document.querySelectorAll('.nav-list__link').forEach(link => {
@@ -52,8 +102,27 @@ document.querySelectorAll('.nav-list__link').forEach(link => {
         initCategoryFilter(store.state.products, store.state.categories)
       }
 
-      if (sectionId === 'ventas') {
-        renderCharts(store.state.products)
+      if(sectionId === 'ventas'){
+        setTimeout(() =>{
+          renderCharts(store.state.products)
+        }, 50)
+      }
+
+      if (sectionId === 'perfil') {
+        if (!themeToggleInitialized) {
+          initThemeToggle()
+          themeToggleInitialized = true
+        } else {
+          
+          const toggle = document.querySelector('.theme-toggle')
+          const currentTheme = document.documentElement.getAttribute('data-theme')
+          toggle.setAttribute('aria-checked', currentTheme === 'dark' ? 'true' : 'false')
+        }
+      
+        if (!profileFormInitialized) {
+          initProfileForm()
+          profileFormInitialized = true
+        }
       }
     });
   });

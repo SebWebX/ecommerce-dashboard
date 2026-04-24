@@ -1,4 +1,20 @@
+
+
 export function renderCharts(products){
+
+  const existingBar = Chart.getChart('chart-categories')
+  const existingScatter = Chart.getChart('chart-prices')
+
+   if (existingBar) existingBar.destroy()
+   if (existingScatter) existingScatter.destroy()
+
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark'
+  const textColor = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.4)'
+  const gridColor = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.06)'
+  const barColor = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(29,29,31,0.08)'
+  const barBorder = isDark ? 'rgba(255,255,255,0.4)' : 'rgba(29,29,31,0.6)'
+  const dotColor = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(29,29,31,0.6)'
+
   const categoryCounts = {}
 
   products.forEach(product => {
@@ -17,8 +33,8 @@ export function renderCharts(products){
       datasets: [{
         label: 'Productos',
         data: categoryData,
-        backgroundColor: 'rgba(29, 29, 31, 0.08)',
-        borderColor: 'rgba(29, 29, 31, 0.6)',
+        backgroundColor: barColor,
+        borderColor: barBorder,
         borderWidth: 1,
         borderRadius: 6
       }]
@@ -29,9 +45,13 @@ export function renderCharts(products){
         legend: {display: false}
       },
       scales: {
+        x: {
+          ticks: { color: textColor },
+          grid: { color: gridColor }
+        },
         y: {
-          beginAtZero: true,
-          ticks: {stepSize: 1}
+          ticks: { color: textColor },
+          grid: { color: gridColor }
         }
       }
     }
@@ -50,7 +70,7 @@ export function renderCharts(products){
       datasets: [{
         label: 'Precio',
         data: priceData,
-        backgroundColor: 'rgba(29, 29, 31, 0.6)',
+        backgroundColor: dotColor,
         pointRadius: 5
       }]
     },
@@ -63,15 +83,18 @@ export function renderCharts(products){
         x: {
           title: {
             display: true,
-            text: 'Producto'
-          }
+            text: 'Producto'},
+            ticks: {color: textColor},
+            grid: {color: gridColor}
+          
         },
         y: {
           title: {
             display: true,
-            text: 'Precio (USD)'
-          },
-          beginAtZero: true
+            text: 'Precio (USD)'},
+            ticks: {color: textColor},
+            grid: {color: gridColor},
+            beginAtZero: true
         }
       }
     }
