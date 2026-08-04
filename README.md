@@ -25,9 +25,4 @@ Link:
 - Chart.js — gráficas interactivas
 - FakeStore API — datos reales
 
-## Aprendizajes
-- Arquitectura CSS escalable con @layer y design tokens
-- JavaScript modular sin frameworks
-- Accesibilidad web — WCAG, ARIA, navegación por teclado
-- Sanitización XSS con DOM API
-- Responsive design con CSS Grid y media queries
+
